@@ -23,7 +23,7 @@ interface User {
 }
 
 export const registerUser = async (data: RegisterData) => {
-  const response = await axios.post(`${API_URL}api/auth/register`, data);
+  const response = await axios.post(`${API_URL}/api/auth/register`, data);
   return response.data;
 };
 
@@ -42,7 +42,7 @@ export const loginUser = async (data: LoginData) => {
   try {
     // console.log('Attempting login with:', { email: data.email });
     
-    const response = await axios.post(`${API_URL}api/auth/login`, data);
+    const response = await axios.post(`${API_URL}/api/auth/login`, data);
     // console.log('Raw login response:', response); // Debug full response
     
     const { token, user, success } = response.data;
